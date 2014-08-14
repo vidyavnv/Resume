@@ -1,0 +1,244 @@
+% resume.tex
+% vim:set ft=tex spell:
+
+\documentclass[10.5pt]{article}
+\topmargin=0.0in %length of margin at the top of the page (1 inch added by default)
+\oddsidemargin=0.0in %length of margin on sides for odd pages
+\evensidemargin=0in %length of margin on sides for even pages
+\textwidth=6.0in %How wide you want your text to be
+\marginparwidth=0.4in
+\headheight=0pt %1in margins at top and bottom (1 inch is added to this value by default)
+\headsep=0pt %Increase to increase white space in between headers and the top of the page
+\textheight=5.0in %How tall the text body is allowed to be on each page
+\usepackage[letterpaper,margin=0.2in]{geometry}
+\usepackage{verbatim}
+\usepackage[utf8]{inputenc}
+\usepackage{mdwlist}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{tgpagella}
+\usepackage{pslatex}
+\pagestyle{empty}
+\setlength{\tabcolsep}{0em}
+\renewcommand{\labelitemi}{{\tiny$\bullet$}}
+
+% indentsection style, used for sections that aren't already in lists
+% that need indentation to the level of all text in the document
+\newenvironment{indentsection}[1]%
+{\begin{list}{}%
+	{\setlength{\leftmargin}{#1}}%
+	\item[]%
+}
+{\end{list}}
+
+% opposite of above; bump a section back toward the left margin
+\newenvironment{unindentsection}[1]%
+{\begin{list}{}%
+	{\setlength{\leftmargin}{-0.5#1}}%
+	\item[]%
+}
+{\end{list}}
+
+% format two pieces of text, one left aligned and one right aligned
+\newcommand{\headerrow}[2]
+{\begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}r}
+	#1 &
+	#2 \\
+\end{tabular*}}
+
+% make "C++" look pretty when used in text by touching up the plus signs
+\newcommand{\CPP}
+{C\nolinebreak[4]\hspace{-.05em}\raisebox{.22ex}{\footnotesize\bf ++}}
+
+
+% and the actual content starts here
+\begin{document}
+
+\begin{center}
+{\LARGE \textbf{V VIDYA}}
+
+2, Jai Apartments, IP Extension, Patparganj, New Delhi 110092, India
+\\
+Tel: +91-9899761567\ \ \textbullet
+\ \ Email: vidya.vnv@gmail.com
+\\http://www.nsitonline.in/people/vidya.v
+\\http://www.github.com/vidyavnv
+\end{center}
+\vspace{-0.2em}
+\hrule
+\vspace{-0.2em}
+%\begin{center}
+%Graduated from 
+%\end{center}
+\vspace{-0.5em}
+\normalsize
+\subsection*{EDUCATION}
+\vspace{-3pt}
+\headerrow
+		{\textbf{University of Delhi}, Netaji Subhas Institute of Technology}
+                {Delhi, India}
+\headerrow
+               {B.E. (Information Technology), 70.11\%}
+               {2014}
+\\[0.07in]
+\headerrow
+		{\textbf{CBSE}, Bal Bhavan Public School}
+                {Delhi, India}
+\headerrow
+{12th standard,    Percentage: 90.4\%}
+{2009}
+\headerrow
+{10th standard,    Percentage: 94.2\% }
+{2007}	
+	
+	
+\subsection*{EXPERIENCE}
+\vspace{-3pt}
+\headerrow
+		{\textbf{American Express India Pvt. Ltd.}}
+		{Gurgaon, India}
+	\headerrow
+		{\emph{Software Engineer}}
+		{\emph{2014 - Present}}
+$\bullet$ Currently working on building an application using Python and Pig which assigns customers, a score, for efficient campaign 
+\\\hspace*{2.5mm}management. 
+\\[0.06in]
+	\headerrow
+		{\textbf{InfoAssembly {\it  - Creates and designs data that enables intended data discovery customized to user's needs}}}
+		{Delhi, India}
+	\headerrow
+		{\emph{Software Engineer, Intern}}
+		{\emph{2013}}
+$\bullet$ Built a {\it {\bf web crawler }} to parse RSS, PDF and XSL links on a set of user defined domains using Scrapy. 
+\\
+$\bullet$ {\it {\bf Developed an API }} in Python for Socrata(cloud-software company) to scrape data for over 1500 domains.
+\\
+$\bullet$ Built  {\it {\bf Mongo Service Layer }} to optimize the database interactions with the client using Python and MongoDB. 
+\\
+$\bullet$ Built a  {\it {\bf Chrome Extension }} with NodeJS and MongoDB to extract data from websites and store it in a  database.
+\\[0.06in]
+\headerrow
+		{\textbf{Buyingiq.com {\it -  Online Shopping Advisor}}}
+		{Delhi, India}
+	\headerrow
+		{\emph{Software Engineer, Intern}}
+		{\emph{2013}}
+$\bullet$ Built {\it {\bf Recommendation Engine}} through Item based Collaborative Filtering algorithm which takes into account binary 
+\\\hspace*{2.5mm}ratings(viewed/not viewed by users), using PHP and PDO API, which had a run time of 13 seconds over a data of 11000 user entries.
+\\
+$\bullet$ The engine  predicts  top 5 products to present under the feature "People who viewed this item also viewed".
+\\
+$\bullet$ Used Model based Collaborative Filtering approach after analysing a number of recommendation systems.
+\\[0.06in]
+	\headerrow
+		{\textbf{GENPACT}}
+		{Delhi, India}
+	\\
+	\headerrow
+	        {\emph{Software Engineer, Summer Trainee}}
+		{\emph{2012}}
+$\bullet$ Worked in a team that developed {\it {\bf HelpDesk application}} where cases are generated through different channels.
+\\
+$\bullet$ Developed the code on the Front end using Java and JSP which serves more than  {\it {\bf  3k users }} in the organization. 
+
+\subsection*{ACADEMIC PROJECTS}
+\vspace{-3pt}
+{\it {\bf Predict Stock Prices using Tweets, Headlines and Google Analytics}}
+\\
+$\bullet$ Collected stock prices and headlines from Google Finance and Yahoo Finance using {\it {\bf Python's BeautifulSoup}}.
+\\
+$\bullet$ Employed a pilot approach of evaluating one company on all three parameters- stocks, tweets and headlines.
+\\
+$\bullet$ Used Google Analytics to reduce error in prediction and expanding the project to involve various market sectors.
+\\[0.06in]
+{\it {\bf Sentiment Analysis of Users' Reviews on IMDB Movies}}
+\\
+$\bullet$ Applied Naive Bayes classifier using NLTK in  {\it {\bf Python}} to classify reviews into positive or negative class with an accuracy of {\it {\bf 74\%}}.
+\\
+$\bullet$ Developed a feature mechanism in {\it {\bf Python}} which selects top N words to classify the reviews. This increased the accuracy to {\it {\bf 84\%}}.
+\\[0.06in]
+{\it {\bf Automatic Detection of Anatomical Structures In Heavily Abnormal Retinal Images for the Detection of  Glaucomatous Changes}}
+\\
+$\bullet$ Developed an algorithm to detect optic disc and macula using MATLAB which has a success rate of {\it{\bf 90\% }}. 
+\\
+$\bullet$ Worken on applying machine learning techniques to identify the optic disc and optimize the algorithm. 
+\\
+$\bullet$ Performed a literature survey on optic disc and macula identification on retinal or fundus images.
+\\[0.06in]
+{\it {\bf E-Commerce Website Design and Development}}
+\\
+$\bullet$ Designed an E-Commerce Website using PHP and MySQL supporting 200 products and a shopping cart. 
+\\
+$\bullet$ Built an Entity-Relationship, SRS and UML model for an E-Commerce Website and for a Social Networking Website. 
+\\[0.06in]
+{\it {\bf Other Projects}}
+\\
+$\bullet$ Predicted the area burnt by the forest fires using Linear Regression with 85\% accuracy. All implementation was done using WEKA.
+\\
+$\bullet$ Developed  Payroll Management System in C++ as a part of high school project.
+
+\subsection*{SKILLS}
+\vspace{-3pt}
+\hyphenpenalty=1000
+
+	{\it {\bf Programming: }}C, \CPP, Python, NodeJs, Javascript, PHP, HTML, Matlab  
+         \hspace*{20.5mm}{\it {\bf Operating Systems: }}UNIX, WINDOWS    
+	\\{\it {\bf Tools: }}WEKA, XCode, Git, LAMP, Eclipse
+          \hspace*{62mm}{\it {\bf Databases: }}MySQL, MongoDB, Oracle 9i  
+         \\{\it {\bf Languages:}}English, Hindi, German  
+   
+
+\subsection*{LEADERSHIP SKILLS }
+\vspace{-3pt}
+{\emph{President}}, The NSIT Quiz Club
+\\
+$\bullet$ Promoted to President in Spring 2013; led a team of  {\it {\bf 30}} people to ensure effective running of NSIT's largest ever quizzing festival, with participation increasing to  {\it {\bf three times}} previous years'. 
+\\
+$\bullet$ Raised  {\it {\bf 75\% }}of sponsorship within 2 weeks. 
+\\
+$\bullet$ Handled the accounts for the NSIT Quiz Fest 2013 and NSIT Quiz Fest 2012 as the Treasurer.
+\\
+\\
+{\emph{Co-Founder, Webmaster}}, ACM NSIT Student Chapter
+\\
+$\bullet$ {\it {\bf Co-founded the society}} in order to encourage undergraduate research among students in various areas of computer science through
+\\\hspace*{2.5mm}research talks and competitions.
+\\
+$\bullet$ Spearheaded the design team to complete the extensively detailed website(http://nsit.acm.org/) within a month(2 months
+\\\hspace*{2.5mm}before target), using WordPress, PHP, HTML and CSS. It gained 11000 hits within a span of 5 months.
+\\
+\\
+{\emph{Lead Developer}},	NSITOnline - Official NSIT Portal
+\\
+$\bullet$ Developed official NSIT forum http://forum.nsitonline.in/ using phpBB, Joomla and Facebook API for resolving student queries regarding
+ \\\hspace*{2.5mm}  admission and placements.
+\\
+$\bullet$ Developed the website http://www.nsitonline.in/ which serves as a portal for the Training and Placement team and is a consolidated source for 
+ \\\hspace*{2.5mm} information and resources for the students. 
+\\
+\\
+{\emph{Team Captain}}, Basketball
+\\
+$\bullet$ Excellent time management skills. Balanced a 40+ hour practice, training, competition, and travel schedule, in addition to academics.
+\\
+$\bullet$ Effectively managed communications between 15 team members, served as a liaison between the team and coaching staff and effectively resolved 
+\\\hspace*{2.5mm} intra-team conflicts.
+
+
+
+\subsection*{ACHIEVEMENTS}
+\vspace{-3pt}
+$\bullet$ Graduated in Introduction to Artificial Intelligence conducted by Stanford University. 
+\\
+$\bullet$ In top 0.5\% in All India Engineering Entrance Examination (AIEEE) out of 11 lakh students nationally.
+\\
+$\bullet$ In top 2\% in Indian Institute of Technology Joint Entrance Exam (IIT-JEE) out of 4 lakh students nationally.
+\\
+$\bullet$ Top 3 scorers in 10th and 12th board CBSE Examination in School.
+
+
+\subsection*{RELEVANT COURSEWORK}
+\vspace{-3pt}
+{Data Structures, Algorithms, Theory of Computation, Database Systems, Operating Systems, Software Engineering,Computer Networks,
+\\  Artificial Intelligence, Machine Learning.}
+\end{document}
