@@ -1,0 +1,228 @@
+% resume.tex
+% vim:set ft=tex spell:
+
+\documentclass[10.5pt]{article}
+\topmargin=10in %length of margin at the top of the page (1 inch added by default)
+\usepackage[letterpaper,margin=0.4in]{geometry}
+\usepackage{verbatim}
+\usepackage[utf8]{inputenc}
+\usepackage{mdwlist}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{tgpagella}
+\usepackage{pslatex}
+\usepackage{color,hyperref}
+\usepackage{changepage}
+\usepackage{ragged2e}
+\usepackage{enumitem}
+\usepackage{pgffor}
+\usepackage{longtable}
+\usepackage{lipsum} % just for the example
+\newcommand\textline[4][t]{%
+  \par\smallskip\noindent\parbox[#1]{.350\textwidth}{\raggedright{#2}}%
+  \parbox[#1]{.333\textwidth}{\centering#3}%
+  \parbox[#1]{.300\textwidth}{\raggedleft{#4}}%
+}
+\newcommand\textlinecol[3][t]{%
+  \par\smallskip\noindent\parbox[#1]{.530\textwidth}{\raggedright{#2}}%
+  \parbox[#1]{.450\textwidth}{\raggedleft{#3}}%
+}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.3}
+\definecolor{mygray}{gray}{0.9}
+\hypersetup{colorlinks,breaklinks,pdfborderstyle={/S/U/W 4},linkcolor=blue,urlcolor=blue,anchorcolor=blue,citecolor=blue}
+\pagestyle{empty}
+\setlength{\tabcolsep}{0em}
+\setlist[itemize,1]{label=\textbullet,leftmargin=0.1in,rightmargin=0.5in}
+%\renewcommand{\labelitemi}{{\tiny$\bullet$}}
+\newenvironment{subs}
+  {\adjustwidth{1em}{0pt}}
+  {\endadjustwidth}
+
+
+% indentsection style, used for sections that aren't already in lists
+% that need indentation to the level of all text in the document
+\newenvironment{indentsection}[1]%
+{\begin{list}{}%
+	{\setlength{\leftmargin}{#1}}%
+	\item[]%
+}
+{\end{list}}
+
+% opposite of above; bump a section back toward the left margin
+\newenvironment{unindentsection}[1]%
+{\begin{list}{}%
+	{\setlength{\leftmargin}{-0.5#1}}%
+	\item[]%
+}
+{\end{list}}
+
+% format two pieces of text, one left aligned and one right aligned
+\newcommand{\headerrow}[2]
+{\begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}r}
+	#1 &
+	#2 \\
+\end{tabular*}}
+
+% make "C++" look pretty when used in text by touching up the plus signs
+\newcommand{\CPP}
+{C\nolinebreak[4]\hspace{-.05em}\raisebox{.22ex}{\footnotesize\bf ++}}
+
+
+% and the actual content starts here
+\begin{document}
+
+\begin{center}
+{\LARGE \textbf{VIDYA VENKITESWARAN}}
+
+250 28th St, \#3, San Francisco, CA 94131 | 917.325.1397
+| \href{mailto:vidya.venkiteswaran@columbia.edu}{vv2269@columbia.edu}  \\\href{http://vidyavnv.github.io/}{www.vidyavnv.github.io}
+\end{center}
+\vspace{-2pt}
+\normalsize
+\hrule width \hsize \kern 0.5mm
+\vspace{-10pt}
+\subsection*{\textbf{EDUCATION}}
+\begin{subs}
+\vspace{-3pt}
+\headerrow
+		{\textbf{Columbia University, Fu Foundation School of Engineering and Applied Sciences}}
+                {New York, NY}
+\vspace{1pt}
+\headerrow
+               {Master of Science in Computer Science (Machine Learning Track), GPA 3.52}
+               {Dec, 2017}
+\vspace{1pt}
+\headerrow
+	      {Teaching Assistant Fellowship: Machine Learning, Advanced Software Engineering, Python}
+	      {Sep, 2016 - Dec, 2017}
+\vspace{5pt}	      
+\headerrow
+	      {Coursework: Applied Machine Learning, Natural language Processing with Deep Learning, Machine Learning, Artificial Intelligence}
+	      {}	
+\vspace{-1pt}	      	      
+\headerrow
+		{\textbf{University of Delhi}, Netaji Subhas Institute of Technology}
+                {New Delhi, India}
+\vspace{1pt}	      	      
+\headerrow
+               {Bachelor of Engineering in Information Technology, 71.66\%}
+               {May, 2014}
+	{}
+\end{subs}
+
+\vspace{0.6em}
+\normalsize
+\hrule width \hsize \kern 0.5mm
+\vspace{-10pt}
+\subsection*{\textbf{EXPERIENCE}}
+\begin{subs}
+\vspace{-5pt}
+\headerrow
+		{\textbf{Uber Technologies Inc.}}
+                {San Francisco, USA}
+\vspace{5pt}
+\headerrow
+               {\textit{Software Engineering Intern}}
+               {May, 2017 - Aug 2017}
+\vspace{-15pt}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item Developed a model to integrate real time traffic data to predict ETA for trips - improving the ETA prediction by 25\% and built scalable pipeline to enable the ETA analysis
+\item Designed and built a platform to perform feature engineering using optimized Hive queries and Spark computations  
+\end{itemize}
+\vspace{3pt}
+\headerrow
+		{\textbf{Delhivery (SSN Logistics)}}
+                {Gurgaon, India}
+\vspace{5pt}
+\headerrow
+               {\textit{Software Engineer}}
+               {Mar, 2015 - Aug, 2016}
+\vspace{-15pt}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item Developed an algorithm to extract locality and sublocality from addresses pertaining to unstructured address and zipcodes in India; increased deliveries per day by 59\% (less human involvement) and decreased misdeliveries by 43\%
+\item Built model to predict category and sub-category of products using Naive Bayes algorithm to achieve accuracy of 94\%; affecting product level intelligence thereby improving the item catalog, better item pricing, and enhanced metadata
+\end{itemize}
+\vspace{3pt}
+\headerrow
+		{\textbf{American Express}}
+                {Gurgaon, India}
+\vspace{5pt}
+\headerrow
+               {\textit{Software Engineer}}
+               {Jul, 2014 - Feb, 2015}
+\vspace{-15pt}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item Led project to integrate two systems - Data Warehouse and Data Mart; enabled data analysts to gather information from one source only and thus, improved creation of models in a faster way
+\item Developed application in Python and Hadoop integrating libraries for K-NN, Random Forest, and Gradient Boosting to assign customers' a score, for efficient campaign management; resulted in integration of varied systems under one roof
+\end{itemize}
+\vspace{4pt}
+\headerrow
+		{\textbf{Mozilla Foundation}}
+                {Delhi, India}
+\vspace{5pt}
+\headerrow
+               {\textit{Open Source Developer}}
+               {Dec, 2014 - Mar, 2015}
+\vspace{-15pt}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item Enhanced Talos(Mozilla's Testing Framework) by fixing deprecated scripts resulting in 10\% increase in the efficiency of Talos
+\end{itemize}
+\end{subs}
+
+\vspace{0.6em}
+\normalsize
+\hrule width \hsize \kern 0.5mm
+\vspace{-10pt}
+\subsection*{\textbf{ACADEMIC PROJECTS}}
+\begin{subs}
+\vspace{-3pt}
+{\it {\bf IBM Watson Intern - Integration of probabilistic short and mid-term solar power forecasts into operations of ISOs}}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item Implemented Optimized Swinging Door Algorithm to detect solar power ramp events to enable ISOs to dynamically obtain their ramping needs
+\item Reduced the space and time complexity of the algorithm by 25\%;  processes 60K locations in 13 seconds
+\end{itemize}
+\vspace{3pt}
+{\it {\bf Predict the financial market uncertainties using the conglomerate of search analytics, stock basket correlation and historical data}}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item Employed pilot approach of evaluating a company on three parameters- historical prices, tweets, headlines and Google Trends
+\item Used Google Analytics to reduce error in prediction and expanding project to involve various market sectors
+\end{itemize}
+\vspace{3pt}
+{\it {\bf Detection of anatomical structures in retinal Images for identifying glaucomatous changes}} ({\small funded by the Government of India})
+\begin{itemize}[noitemsep,topsep=0pt]
+\item Developed algorithm to detect optic disc and macula using MATLAB which has a success rate of 90\%
+\item Worked on applying machine learning techniques to identify the optic disc and optimized the algorithm
+\end{itemize}
+\end{subs}
+
+\vspace{0.6em}
+\normalsize
+\hrule width \hsize \kern 0.5mm
+\vspace{-10pt}
+\subsection*{\textbf{SKILLS}}
+\vspace{-12pt}
+\begin{longtable}{ l p{6.2in} } % choose suitable width for "p" column
+{\it {\bf Languages: }} & Python, C, \CPP, Matlab, \LaTeX, HTML, CSS, JavaScript
+	\\{\it {\bf Tools/Frameworks: }} & AWS, Git, LAMP, Hadoop, Disque, WEKA
+	\\{\it {\bf Data Stores: }} & MySQL, Oracle, PostgreSQL, MongoDB, Redis, Neo4j
+	\\{\it {\bf Big Data: }} & Hadoop, MapReduce, Hive
+\end{longtable}
+
+\vspace{-0.6em}
+\normalsize
+\hrule width \hsize \kern 0.5mm
+\vspace{6pt}
+\subsection*{\textbf{HONORS AND AWARDS}}
+\begin{subs}
+\vspace{-3pt}
+\textlinecol{\href{https://devpost.com/software/instatranslate}{Winner} Best Microsoft Hack -\textbf{HackPrinceton(Sponsored by Microsoft)}}{October, 2017}
+\vspace{-3pt}
+\textlinecol{Speaker, \textbf{WithTheBest Conference for Developers}}{Sep, 2016}
+\vspace{-3pt}
+\textlinecol{The Bolt Champion, \textbf{Delhivery(SSN Logistics)}}{Jul, 2015}
+\vspace{-3pt}
+\textlinecol{Merit Scholarship, \textbf{University of Delhi}}{Aug, 2013 - May, 2014}
+\end{subs}
+
+
+\end{document}
